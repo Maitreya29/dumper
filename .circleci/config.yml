@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://bigota.d.miui.com/V12.0.3.0.RFQEUXM/miui_LAURELSPROUTEEAGlobal_V12.0.3.0.RFQEUXM_a3af6e0308_11.0.zip
+           bash dumpyara.sh https://download.c.realme.com/osupdate/RMX2081PU_11_OTA_0490_all_8xdtaWbVYaOz.ozip
 workflows:
   version: 2.1
   cooking:
