@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://download.c.realme.com/osupdate/RMX2081PU_11_OTA_0490_all_8xdtaWbVYaOz.ozip
+           bash dumpyara.sh https://assorted.downloads.oppo.com/firmware/CPH1919/CPH1919EX_11_OTA_1330_all_ST987r8zTmUH.ozip
 workflows:
   version: 2.1
   cooking:
