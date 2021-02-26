@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://bigota.d.miui.com/V12.0.1.0.PDCCNXM/miui_MI6X_V12.0.1.0.PDCCNXM_868e307948_9.0.zip
+           bash dumpyara.sh https://dl.google.com/dl/android/aosp/sunfish-ota-rq1a.210205.004-1f66abd9.zip
 workflows:
   version: 2.1
   cooking:
