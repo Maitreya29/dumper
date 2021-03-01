@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://dl.google.com/dl/android/aosp/sunfish-ota-rq1a.210205.004-1f66abd9.zip
+           bash dumpyara.sh https://gindex.thesatancat.workers.dev/0:/RMX2081PU_11_OTA_10300280_all_booFeqHWHQrb_11597e91903e599.ozip
 workflows:
   version: 2.1
   cooking:
