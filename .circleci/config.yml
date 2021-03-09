@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://otaafsg-cost.realmemobile.com/RMX1945/RMX1941EX_11.C.53_1530_202102012004/patch/amazone2/GLO/RMX1941EX/RMX1941EX_11.C.53_1530_202102012004/RMX1941EX_11_OTA_1530_all_NFstHv8pEo4f_e8369.ozip
+           bash dumpyara.sh https://oxygenos.oneplus.net/OnePlus5TOxygen_43_OTA_069_all_2010292144_76910d123e3940e5.zip
 workflows:
   version: 2.1
   cooking:
