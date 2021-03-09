@@ -2,4 +2,5 @@
 
 Personal CirceCi dumpyara script 
 
-[**Dumps**](https://git.rip/ItsVixano/dumpyara)
+
+Dumps remain private.

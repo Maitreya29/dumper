@@ -26,7 +26,7 @@ else
     [[ -e "$URL" ]] || { echo "Invalid Input" && exit 1; }
 fi
 
-ORG=ItsVixano
+ORG=Maitreya29
 FILE=$(echo ${URL##*/} | inline-detox)
 EXTENSION=$(echo ${URL##*.} | inline-detox)
 UNZIP_DIR=${FILE/.$EXTENSION/}
@@ -187,32 +187,32 @@ if [[ -n $GIT_OAUTH_TOKEN ]]; then
     curl --silent --fail "https://raw.githubusercontent.com/$ORG/$repo/$branch/all_files.txt" 2> /dev/null && echo "Firmware already dumped!" && exit 1
     git init
     if [[ -z "$(git config --get user.email)" ]]; then
-        git config user.email vixanonew@gmail.com
+        git config user.email maitreyapatni30@gmail.com
     fi
     if [[ -z "$(git config --get user.name)" ]]; then
-        git config user.name ItsVixano
+        git config user.name Maitreya29
     fi
     git checkout -b "$branch"
     find . -size +97M -printf '%P\n' -o -name "*sensetime*" -printf '%P\n' -o -name "*.lic" -printf '%P\n' >| .gitignore
     git add --all
-    git remote add origin https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git
+    git remote add origin https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/Maitreya29/dump.git
     git commit -asm "Add ${description}"
-    git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git "$branch" ||
+    git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dump.git "$branch" ||
         (
             git update-ref -d HEAD
             git reset system/ vendor/
             git checkout -b "$branch"
             git commit -asm "Add extras for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/Maitreya29/dump.git "$branch"
             git add vendor/
             git commit -asm "Add vendor for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/Maitreya29/dump.git "$branch"
             git add system/system/app/ system/system/priv-app/ || git add system/app/ system/priv-app/
             git commit -asm "Add apps for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/Maitreya29/dump.git "$branch"
             git add system/
             git commit -asm "Add system for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/ItsVixano/dumpyara.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@git.rip/Maitreya29/dump.git "$branch"
         )
 else
     echo "Dump done locally."
@@ -231,7 +231,7 @@ if [[ -n "$TG_TOKEN" ]]; then
         printf "\n<b>Version:</b> %s" "$release"
         printf "\n<b>Fingerprint:</b> %s" "$fingerprint"
         printf "\n<b>Git:</b>"
-        printf "\n<a href=\"%s\">Branch</a>" "https://git.rip/ItsVixano/dumpyara/-/tree/"$branch""
+        printf "\n<a href=\"%s\">Branch</a>" "https://git.rip/Maitreya29/dump/-/tree/"$branch""
     } >> "$PROJECT_DIR"/working/tg.html
     TEXT=$(< "$PROJECT_DIR"/working/tg.html)
     curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendmessage" --data "text=${TEXT}&chat_id=${CHAT_ID}&parse_mode=HTML&disable_web_page_preview=True" > /dev/null
