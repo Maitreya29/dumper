@@ -12,7 +12,7 @@ jobs:
            cd dump
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://oxygenos.oneplus.net/OnePlus5TOxygen_43_OTA_069_all_2010292144_76910d123e3940e5.zip
+           bash dumpyara.sh https://oxygenos.oneplus.net/NordOxygen_14.I.13_OTA_013_all_2102040316_0553192e1d2c4a2a.zip
 workflows:
   version: 2.1
   cooking:
