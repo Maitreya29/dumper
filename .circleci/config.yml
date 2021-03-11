@@ -6,7 +6,8 @@ jobs:
    steps:
       - run:
           command: |
-           apt-get -y update && apt-get -y upgrade && apt-get -y install git wget curl unace unrar zip unzip p7zip-full p7zip-rar rename sharutils rar uudeview mpack arj cabextract file-roller device-tree-compiler liblzma-dev python3-pip brotli liblz4-tool axel gawk aria2 detox
+           apt-get -y update && apt-get -y upgrade && apt-get -y install git wget curl unace unrar zip unzip p7zip-full p7zip-rar rename sharutils rar uudeview mpack arj cabextract file-roller device-tree-compiler liblzma-dev python3-pip brotli liblz4-tool axel gawk aria2 aptitude detox
+           aptitude install dhcp-client
            pip3 install backports.lzma protobuf pycrypto docopt zstandard twrpdtgen
            git clone https://github.com/Maitreya29/dumper dump
            cd dump
