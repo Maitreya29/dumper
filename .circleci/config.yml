@@ -7,13 +7,11 @@ jobs:
       - run:
           command: |
            apt-get -y update && apt-get -y upgrade && apt-get -y install git wget curl unace unrar zip unzip p7zip-full p7zip-rar rename sharutils rar uudeview mpack arj cabextract file-roller device-tree-compiler liblzma-dev python3-pip brotli liblz4-tool axel gawk aria2 aptitude detox
-           aptitude install dhcp-client
            pip3 install backports.lzma protobuf pycrypto docopt zstandard twrpdtgen
            git clone https://github.com/Maitreya29/dumper dump
            cd dump
            echo $APIGIT
            echo $APIBOT
-           dhclient
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
            bash dumpyara.sh https://oxygenos.oneplus.net/OnePlus5TOxygen_43_OTA_069_all_2010292144_76910d123e3940e5.zip
