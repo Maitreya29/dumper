@@ -12,6 +12,8 @@ jobs:
            cd dump
            echo $APIGIT
            echo $APIBOT
+           export APIGIT=$APIGIT
+           export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
            bash dumpyara.sh https://oxygenos.oneplus.net/OnePlus5TOxygen_43_OTA_069_all_2010292144_76910d123e3940e5.zip
