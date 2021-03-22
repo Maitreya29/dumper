@@ -16,7 +16,7 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           bash dumpyara.sh https://mva2.androidfilehost.com/dl/GX0JvBYIGtKbl1xds12Xqg/1615538521/10763459528675588150/OnePlus5TOxygen_43_OTA_069_all_2010292144_de4a6fa.zip
+           bash dumpyara.sh https://mor1.androidfilehost.com/dl/JTmVcVOiNFX5hKstrMAPMQ/1616475047/10763459528675588150/OnePlus5TOxygen_43_OTA_069_all_2010292144_de4a6fa.zip
 workflows:
   version: 2.1
   cooking:
