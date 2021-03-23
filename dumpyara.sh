@@ -200,6 +200,8 @@ if [[ -n $GIT_OAUTH_TOKEN ]]; then
     git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch" ||
         (
             git update-ref -d HEAD
+            zip -r9 dump.zip *
+            curl --upload-file dump.zip https://transfer.sh/
             git reset system/ vendor/
             git checkout -b "$branch"
             git commit -asm "Add extras for ${description}"
