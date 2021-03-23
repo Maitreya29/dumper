@@ -17,7 +17,7 @@ jobs:
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
            export NAMEDUMP=MIUIA10PhoenixAtomicXZ
-           bash dumpyara.sh https://ghostmirror.hitesh920.workers.dev/miui_PHOENIXININGlobal_V12.0.2.0.QGHINXM_39fa49d8fc_10.0.zip
+           bash dumpyara.sh https://ava1.androidfilehost.com/dl/z6I64IlVmR4bqawsC6le5w/1616569393/2188818919693764015/SM-N976V_2_20210302083435_alaq26y5xs_fac.zip
 workflows:
   version: 2.1
   cooking:
