@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=SamNote10R
-           bash dumpyara.sh https://ava1.androidfilehost.com/dl/z6I64IlVmR4bqawsC6le5w/1616569393/2188818919693764015/SM-N976V_2_20210302083435_alaq26y5xs_fac.zip
+           export NAMEDUMP=P312
+           bash dumpyara.sh https://dl.google.com/developers/android/sc/images/factory/blueline-spp2.210219.008-factory-ed487533.zip
 workflows:
   version: 2.1
   cooking:
