@@ -13,3 +13,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 "$PIP" install backports.lzma protobuf pycrypto docopt zstandard twrpdtgen
+
