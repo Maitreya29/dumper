@@ -183,8 +183,41 @@ chown "$(whoami)" ./* -R
 chmod -R u+rwX ./* #ensure final permissions
 find "$PROJECT_DIR"/working/"${UNZIP_DIR}" -type f -printf '%P\n' | sort | grep -v ".git/" > "$PROJECT_DIR"/working/"${UNZIP_DIR}"/all_files.txt
 
-zip -r9 onenote.zip *
-curl --upload-file ./onenote.zip http://transfer.sh/onenote.zip
+if [[ -n $GIT_OAUTH_TOKEN ]]; then
+    curl --silent --fail "https://raw.githubusercontent.com/$ORG/$repo/$branch/all_files.txt" 2> /dev/null && echo "Firmware already dumped!" && exit 1
+    git init
+    if [[ -z "$(git config --get user.email)" ]]; then
+        git config user.email maitreyapatni30@gmail.com
+    fi
+    if [[ -z "$(git config --get user.name)" ]]; then
+        git config user.name Maitreya29
+    fi
+    git checkout -b "$branch"
+    find . -size +97M -printf '%P\n' -o -name "*sensetime*" -printf '%P\n' -o -name "*.lic" -printf '%P\n' >| .gitignore
+    git add --all
+    git remote add origin https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git
+    git commit -asm "Add ${description}"
+    git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch" ||
+        (
+            git update-ref -d HEAD
+            git reset system/ vendor/
+            git checkout -b "$branch"
+            git commit -asm "Add extras for ${description}"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git add vendor/
+            git commit -asm "Add vendor for ${description}"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git add system/system/app/ system/system/priv-app/ || git add system/app/ system/priv-app/
+            git commit -asm "Add apps for ${description}"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git add system/
+            git commit -asm "Add system for ${description}"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+        )
+else
+    echo "Dump done locally."
+    exit 1
+fi
 
 # Telegram channel
 TG_TOKEN=$(< "$PROJECT_DIR"/.tgtoken)
