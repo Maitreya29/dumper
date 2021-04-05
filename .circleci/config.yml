@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=P312
-           bash dumpyara.sh https://dl.google.com/developers/android/sc/images/factory/blueline-spp2.210219.008-factory-ed487533.zip
+           export NAMEDUMP=RedfinApril
+           bash dumpyara.sh https://dl.google.com/dl/android/aosp/redfin-ota-rq2a.210405.005-bb19e670.zip
 workflows:
   version: 2.1
   cooking:
