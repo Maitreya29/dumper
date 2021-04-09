@@ -6,14 +6,6 @@ PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 # Create input & working directory if it does not exist
 mkdir -p "$PROJECT_DIR"/input "$PROJECT_DIR"/working
 
-# GitHub token
-if [[ -n $2 ]]; then
-    GIT_OAUTH_TOKEN=$2
-elif [[ -f ".githubtoken" ]]; then
-    GIT_OAUTH_TOKEN=$(< .githubtoken)
-else
-    echo "GitHub token not found. Dumping just locally..."
-fi
 
 # download or copy from local?
 if echo "$1" | grep -e '^\(https\?\|ftp\)://.*$' > /dev/null; then
@@ -195,24 +187,24 @@ if [[ -n $GIT_OAUTH_TOKEN ]]; then
     git checkout -b "$branch"
     find . -size +97M -printf '%P\n' -o -name "*sensetime*" -printf '%P\n' -o -name "*.lic" -printf '%P\n' >| .gitignore
     git add --all
-    git remote add origin https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git
+    git remote add origin https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git
     git commit -asm "Add ${description}"
-    git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch" ||
+    git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git "$branch" ||
         (
             git update-ref -d HEAD
             git reset system/ vendor/
             git checkout -b "$branch"
             git commit -asm "Add extras for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git "$branch"
             git add vendor/
             git commit -asm "Add vendor for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git "$branch"
             git add system/system/app/ system/system/priv-app/ || git add system/app/ system/priv-app/
             git commit -asm "Add apps for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git "$branch"
             git add system/
             git commit -asm "Add system for ${description}"
-            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/dump.git "$branch"
+            git push https://oauth2:"$GIT_OAUTH_TOKEN"@gitlab.com/Maitreya29/newdump.git "$branch"
         )
 else
     echo "Dump done locally."
@@ -231,7 +223,7 @@ if [[ -n "$TG_TOKEN" ]]; then
         printf "\n<b>Version:</b> %s" "$release"
         printf "\n<b>Fingerprint:</b> %s" "$fingerprint"
         printf "\n<b>Git:</b>"
-        printf "\n<a href=\"%s\">Branch</a>" "https://gitlab.com/Maitreya29/dump/-/tree/"$branch""
+        printf "\n<a href=\"%s\">Branch</a>" "https://gitlab.com/Maitreya29/newdump/-/tree/"$branch""
     } >> "$PROJECT_DIR"/working/tg.html
     TEXT=$(< "$PROJECT_DIR"/working/tg.html)
     curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendmessage" --data "text=${TEXT}&chat_id=${CHAT_ID}&parse_mode=HTML&disable_web_page_preview=True" > /dev/null

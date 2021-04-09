@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=RedfinApril
-           bash dumpyara.sh https://dl.google.com/dl/android/aosp/redfin-ota-rq2a.210405.005-bb19e670.zip
+           export NAMEDUMP=X00QD
+           bash dumpyara.sh https://dlcdnets.asus.com/pub/ASUS/ZenFone/ZE620KL/UL-ASUS_X00QD-ASUS-16.0615.2006.131-1.1.41-user.zip
 workflows:
   version: 2.1
   cooking:
