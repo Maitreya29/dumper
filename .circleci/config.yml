@@ -17,7 +17,7 @@ jobs:
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
            export NAMEDUMP=Sweet
-           bash dumpyara.sh https://bigota.d.miui.com/V12.0.6.0.RKFMIXM/miui-blockota-sweet_global-V12.0.1.0.RKFMIXM-V12.0.6.0.RKFMIXM-d18e4c9c1e-11.0.zip
+           bash dumpyara.sh https://bigota.d.miui.com/V12.0.4.0.RKFIDXM/miui_SWEETIDGlobal_V12.0.4.0.RKFIDXM_2e22fc6bc2_11.0.zip
 workflows:
   version: 2.1
   cooking:
