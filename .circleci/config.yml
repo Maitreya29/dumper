@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=Sweet
-           bash dumpyara.sh https://bigota.d.miui.com/V12.0.4.0.RKFIDXM/miui_SWEETIDGlobal_V12.0.4.0.RKFIDXM_2e22fc6bc2_11.0.zip
+           export NAMEDUMP=meizushit
+           bash dumpyara.sh https://download.meizu.com/Firmware/Flyme/16s_Pro/9.21.4.29/cn_daily/20210429002119/889a2ad5/update.zip
 workflows:
   version: 2.1
   cooking:
