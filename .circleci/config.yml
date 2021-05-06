@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=meizushit
-           bash dumpyara.sh https://download.meizu.com/Firmware/Flyme/16s_Pro/9.21.4.29/cn_daily/20210429002119/889a2ad5/update.zip
+           export NAMEDUMP=exui
+           bash dumpyara.sh https://ghostmirror.hitesh920.workers.dev/0://ExtendedUI-2.1-GAPPS-R-INTERNAL-dumpling-20210102-0459.zip
 workflows:
   version: 2.1
   cooking:
