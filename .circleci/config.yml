@@ -16,8 +16,8 @@ jobs:
            export APIBOT=$APIBOT
            curl -o .githubtoken $APIGIT
            curl -o .tgtoken $APIBOT
-           export NAMEDUMP=giodaisy1
-           bash dumpyara.sh https://bigota.d.miui.com/V11.0.20.0.QDLMIXM/miui_DAISYGlobal_V11.0.20.0.QDLMIXM_dd75a5632a_10.0.zip
+           export NAMEDUMP=giojasmine1
+           bash dumpyara.sh https://bigota.d.miui.com/V11.0.27.0.QDIMIXM/miui_JASMINEGlobal_V11.0.27.0.QDIMIXM_3afe734099_10.0.zip
 workflows:
   version: 2.1
   cooking:
